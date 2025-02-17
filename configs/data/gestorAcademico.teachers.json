@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "67b352ad040ef5d74569d64e"
+  },
+  "name": "Elmer",
+  "surname": "Santos",
+  "username": "esantos",
+  "email": "elmersantos@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$hErk/p4HfNZ2AZkKHA+ltw$hBY3HBOAonmBgT5oQQXd1OtMPK49tp2yJR0Oq5MAmIk",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-17T15:15:57.872Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T15:15:57.872Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b36382db475a6aa381f033"
+  },
+  "name": "Carlos",
+  "surname": "Cortez",
+  "username": "ccortez",
+  "email": "carloscortez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$Ms0Nr1OD+cEwIQmfD8T9Zg$R/uPpz3wdnNZpGDhYQ/MrRbbmLwjoYf2LzW3mgPlf9Q",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-17T16:27:47.001Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T16:27:47.001Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b363a3db475a6aa381f036"
+  },
+  "name": "Rodrigo",
+  "surname": "Santos",
+  "username": "rsantos",
+  "email": "bjoj@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$eZ1aZQ85d9Tty4S2l8huwA$sk3382btvmt1dJUruIUsvtmsCrhPBVqrFKtv5XrfMcQ",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-02-17T16:28:19.002Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T17:44:24.904Z"
+  }
+}]

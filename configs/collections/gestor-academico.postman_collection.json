@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "c960c479-c05e-4ee1-8523-e9297454904e",
+		"name": "gestor-academico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41636862"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Registrar Student",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ian\",\r\n    \"age\": 18,\r\n    \"username\" : \"ianalf\",\r\n    \"surname\": \"alfaro\",\r\n    \"email\": \"ianalf@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/students/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"students",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logearse Student",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"xd@gmail.com\",\r\n    \"password\" : \"12345678\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/students/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"students",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos los Estudiantes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/students/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"students",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Estudiante Por Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/students/search/67b351b8040ef5d74569d64a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"students",
+								"search",
+								"67b351b8040ef5d74569d64a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Student",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNjQyOGRiNDc1YTZhYTM4MWYwMzkiLCJpYXQiOjE3Mzk4MTMyMTgsImV4cCI6MTczOTgxNjgxOH0.swvitbexLLO7lBarWRHfQXoFA2wfe2OjVG1LbJ-Hk28",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"kevin\",\r\n    \"age\": 18,\r\n    \"username\" : \"kgutierrez\",\r\n    \"surname\": \"gutierrez\",\r\n    \"email\": \"kgutierrez@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/students/67b36428db475a6aa381f039",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"students",
+								"67b36428db475a6aa381f039"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desactivar Student",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNjQyOGRiNDc1YTZhYTM4MWYwMzkiLCJpYXQiOjE3Mzk4MTMyMTgsImV4cCI6MTczOTgxNjgxOH0.swvitbexLLO7lBarWRHfQXoFA2wfe2OjVG1LbJ-Hk28",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/students/67b36428db475a6aa381f039",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"students",
+								"67b36428db475a6aa381f039"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activar Student",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNTFiODA0MGVmNWQ3NDU2OWQ2NGEiLCJpYXQiOjE3Mzk4MTM2NDMsImV4cCI6MTczOTgxNzI0M30.O0EvJvrNR-ojCHwuyNSTDXVvXEcDaOa4GnyfFWoZSUA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/students/activate/67b36428db475a6aa381f039",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"students",
+								"activate",
+								"67b36428db475a6aa381f039"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "Logearse Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"elmersantos@gmail.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/teachers/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teachers",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bryan\",\r\n    \"age\": 25,\r\n    \"username\" : \"Bjoj\",\r\n    \"surname\": \"Joj\",\r\n    \"email\": \"Bjoj@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/teachers/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teachers",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos los Teachers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/teachers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teachers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Teacher Por Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/teachers/Teacher/67b352ad040ef5d74569d64e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teachers",
+								"Teacher",
+								"67b352ad040ef5d74569d64e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNTJhZDA0MGVmNWQ3NDU2OWQ2NGUiLCJpYXQiOjE3Mzk4MTQwNjcsImV4cCI6MTczOTgxNzY2N30.CBirapgwFUKazyjtiTaTcHV4nvXoMtZrxhmPIfUDD0g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rodrigo\",\r\n    \"age\": 22,\r\n    \"username\" : \"RSantos\",\r\n    \"surname\": \"Santos\",\r\n    \"email\": \"RSantos@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/teachers/67b363a3db475a6aa381f036",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teachers",
+								"67b363a3db475a6aa381f036"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desactivar Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNjNhM2RiNDc1YTZhYTM4MWYwMzYiLCJpYXQiOjE3Mzk4MTQxODIsImV4cCI6MTczOTgxNzc4Mn0.Yg7RYrB_m6Sjo4h8o1jMmHsBNUocRQdYdr2sayKmwi4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/teachers/67b363a3db475a6aa381f036?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teachers",
+								"67b363a3db475a6aa381f036"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activar Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNTJhZDA0MGVmNWQ3NDU2OWQ2NGUiLCJpYXQiOjE3Mzk4MTQyNTIsImV4cCI6MTczOTgxNzg1Mn0.DE9t3ns49kb1X7pY94QGEE9rqlGTVzNg1lLKO5TkDqk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/teachers/activate/67b363a3db475a6aa381f036?",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teachers",
+								"activate",
+								"67b363a3db475a6aa381f036"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": []
+		}
+	]
+}
