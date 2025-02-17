@@ -1,17 +1,21 @@
 export const tieneRole = (...roles) => {
+    
     return (req, res, next) => {
-        if(!req.student) {
-            return res.status(500).json({
-                succes: false,
-                msg: 'Se quiere verificar un role sin validar el token primero'
-            })
-        }
-
-        if(!roles.includes(req.student.role)){
-            return res.status(401).json({
+        if (!roles.includes(req.student.role)) {
+            return res.status(400).json({
                 success: false,
-                msg: `Estudiante no autorizado, posee un role ${req.student.role}, los roles autorizados son ${roles}`
-            })
+                message: `Estudiante no autorizado, posee un rol ${req.student.role}, el role autorizado es ${ roles }`
+            });
         }
+        
+        if (!roles.includes(req.teacher.role)) {
+            return res.status(400).json({
+                success: false,
+                message: `Profesor no autorizado, posee un rol ${req.teacher.role}, el role autorizado es ${ roles }`
+            });
+        }
+        
+        next();
+
     }
 }

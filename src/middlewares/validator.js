@@ -25,6 +25,7 @@ export const registerTeacherValidator = [
 
 export const loginValidator = [
     body("email").optional().isEmail().withMessage("Ingrese un correo válido"),
+    body("username").optional().isString().withMessage("Enter a valid username"),
     body("password", "La contraseña debe tener al menos 8 caracteres").isLength({ min: 8 }),
     validarCampos,
 ];
