@@ -36,3 +36,13 @@ export const existeStudentById = async (id = '') => {
         throw new Error(`El ID ${ id } no existe en la base de datos`);
     }
 }
+
+
+export const existeCourseById = async (id = '') => {
+    
+    const existeCourse = await Course.findById(id);
+    
+    if (!existeCourse) {
+        throw new Error(`El ID ${ id } no existe en la base de datos`);
+    }
+    }

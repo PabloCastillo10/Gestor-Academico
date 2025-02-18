@@ -1,0 +1,105 @@
+[{
+  "_id": {
+    "$oid": "67b3fc7bb59bc1903d3afa7f"
+  },
+  "name": "religion",
+  "description": "Iglesia Catolica",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T03:20:27.170Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T08:46:12.601Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b3fc9db59bc1903d3afa81"
+  },
+  "name": "fisica fundamental",
+  "description": "Ley De Newtoon",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T03:21:01.756Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T03:21:01.756Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b3fcbfb59bc1903d3afa83"
+  },
+  "name": "taller",
+  "description": "Programacion con Node10",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T03:21:35.673Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T03:21:35.673Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b40610bd4dc6c46cbe2dd0"
+  },
+  "name": "practica supervisada",
+  "description": "Programacion con Node10",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T04:01:20.394Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T04:01:20.394Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b4213b0fee0ea312791bf8"
+  },
+  "name": "biologia supervisada",
+  "description": "Ecologia",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T05:57:15.832Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T05:57:15.832Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b422fb0fee0ea312791bfb"
+  },
+  "name": "seminario ",
+  "description": "Proyecto de Vida",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T06:04:43.839Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T06:04:43.839Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b4231e0fee0ea312791bfe"
+  },
+  "name": "ingles ",
+  "description": "hello",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-02-17T06:05:18.098Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T06:05:18.098Z"
+  },
+  "__v": 0
+}]

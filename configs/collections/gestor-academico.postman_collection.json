@@ -230,6 +230,66 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Listar Cursos Asignados",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/students/list/67b36428db475a6aa381f039",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"students",
+								"list",
+								"67b36428db475a6aa381f039"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Curso Asignacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentId\" : \"67b36428db475a6aa381f039\",\r\n    \"courseId\" : [ \"67b3fc7bb59bc1903d3afa7f\" , \"67b3fc9db59bc1903d3afa81\", \"67b3fcbfb59bc1903d3afa83\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/students/assign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"students",
+								"assign"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -280,7 +340,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Bryan\",\r\n    \"age\": 25,\r\n    \"username\" : \"Bjoj\",\r\n    \"surname\": \"Joj\",\r\n    \"email\": \"Bjoj@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Leonardo\",\r\n    \"age\": 25,\r\n    \"username\" : \"Ltrejo\",\r\n    \"surname\": \"Trejo\",\r\n    \"email\": \"Ltrejo@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\" : \"12345678\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -469,12 +529,301 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Listar Cursos Asignados Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/teachers/list/67b352ad040ef5d74569d64e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teachers",
+								"list",
+								"67b352ad040ef5d74569d64e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Cursos Asignacion Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"teacherId\" : \"67b363a3db475a6aa381f036\",\r\n    \"courseId\" : [ \"67b3fc7bb59bc1903d3afa7f\" , \"67b3fc9db59bc1903d3afa81\", \"67b3fcbfb59bc1903d3afa83\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/teachers/assign",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"teachers",
+								"assign"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "Courses",
-			"item": []
+			"item": [
+				{
+					"name": "Agregar Curso con Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNTJhZDA0MGVmNWQ3NDU2OWQ2NGUiLCJpYXQiOjE3Mzk4NTgwMjYsImV4cCI6MTczOTg2MTYyNn0.XMF3N89O8Yx-jSaJcS9BEynr8GC_O-boAMA-159E6v0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Ingles \",\r\n    \"description\" : \"hello\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/courses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"courses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Cursos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/courses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"courses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Curso Especifico",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/courses/67b3fc7bb59bc1903d3afa7f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"courses",
+								"67b3fc7bb59bc1903d3afa7f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Curso con Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNTJhZDA0MGVmNWQ3NDU2OWQ2NGUiLCJpYXQiOjE3Mzk4Njc3NjEsImV4cCI6MTczOTg3MTM2MX0.oAu8e-kNlwxmVSzFt0_hc3n2qkUpEZvJCuLG9N3I_tU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Religion\",\r\n    \"description\": \"Iglesia Catolica\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/courses/67b3fc7bb59bc1903d3afa7f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"courses",
+								"67b3fc7bb59bc1903d3afa7f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Curso con Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNTJhZDA0MGVmNWQ3NDU2OWQ2NGUiLCJpYXQiOjE3Mzk4Njc3NjEsImV4cCI6MTczOTg3MTM2MX0.oAu8e-kNlwxmVSzFt0_hc3n2qkUpEZvJCuLG9N3I_tU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/courses/67b3fc7bb59bc1903d3afa7f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"courses",
+								"67b3fc7bb59bc1903d3afa7f"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Activar Curso con Teacher",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNTJhZDA0MGVmNWQ3NDU2OWQ2NGUiLCJpYXQiOjE3Mzk4Njc3NjEsImV4cCI6MTczOTg3MTM2MX0.oAu8e-kNlwxmVSzFt0_hc3n2qkUpEZvJCuLG9N3I_tU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/gestorAcademico/v1/courses/activate/67b3fc7bb59bc1903d3afa7f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorAcademico",
+								"v1",
+								"courses",
+								"activate",
+								"67b3fc7bb59bc1903d3afa7f"
+							],
+							"query": [
+								{
+									"key": "x-token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IzNTJhZDA0MGVmNWQ3NDU2OWQ2NGUiLCJpYXQiOjE3Mzk4NTUxMjUsImV4cCI6MTczOTg1ODcyNX0.7DpLEOwGsALC4qG7ScjYiEpzjt5g7idlOR0GWhAjQ3A",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

@@ -14,8 +14,16 @@
     "$date": "2025-02-17T15:15:57.872Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T15:15:57.872Z"
-  }
+    "$date": "2025-02-17T07:37:04.037Z"
+  },
+  "courses": [
+    {
+      "$oid": "67b40610bd4dc6c46cbe2dd0"
+    },
+    {
+      "$oid": "67b40610bd4dc6c46cbe2dd0"
+    }
+  ]
 },
 {
   "_id": {
@@ -33,8 +41,19 @@
     "$date": "2025-02-17T16:27:47.001Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T16:27:47.001Z"
-  }
+    "$date": "2025-02-17T08:05:07.143Z"
+  },
+  "courses": [
+    {
+      "$oid": "67b3fc7bb59bc1903d3afa7f"
+    },
+    {
+      "$oid": "67b3fc9db59bc1903d3afa81"
+    },
+    {
+      "$oid": "67b3fcbfb59bc1903d3afa83"
+    }
+  ]
 },
 {
   "_id": {
@@ -52,6 +71,77 @@
     "$date": "2025-02-17T16:28:19.002Z"
   },
   "updatedAt": {
-    "$date": "2025-02-17T17:44:24.904Z"
+    "$date": "2025-02-17T08:09:21.153Z"
+  },
+  "courses": [
+    {
+      "$oid": "67b3fc7bb59bc1903d3afa7f"
+    },
+    {
+      "$oid": "67b3fc9db59bc1903d3afa81"
+    },
+    {
+      "$oid": "67b3fcbfb59bc1903d3afa83"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67b441f03482868896061bf4"
+  },
+  "name": "Bryan",
+  "surname": "Joj",
+  "username": "bjoj",
+  "email": "joj@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$lm6jUqCsVfUr9bWRS5XcXg$3pSG7+vzlx94V9uxVtldedgiE2Q5r5eLeYUyf+Ol10g",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "courses": [],
+  "createdAt": {
+    "$date": "2025-02-17T08:16:48.508Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T08:16:48.508Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b442083482868896061bf7"
+  },
+  "name": "Balam",
+  "surname": "Carranza",
+  "username": "bcarranza",
+  "email": "bcarranza@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$hUJx8D1TcMOyTN65iJoWkw$kjUZecVU/nng0igOv0FyqNVpGFlY+OcR3zFc2vb3SWE",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "courses": [],
+  "createdAt": {
+    "$date": "2025-02-17T08:17:12.571Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T08:17:12.571Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b4421e3482868896061bfa"
+  },
+  "name": "Leonardo",
+  "surname": "Trejo",
+  "username": "ltrejo",
+  "email": "ltrejo@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$WtcNhtvzdrBZkL0hd9Fekw$U9PcWu6Hrj+Py3WnWfoay1Av2yMSIiUxhq0KcHN5NsY",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "courses": [],
+  "createdAt": {
+    "$date": "2025-02-17T08:17:34.592Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T08:17:34.592Z"
   }
 }]

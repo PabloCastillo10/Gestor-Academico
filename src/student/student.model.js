@@ -38,7 +38,11 @@ import { Schema, model } from "mongoose"
         estado: {
             type: Boolean,
             default: true
-        }
+        },
+        courses: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Course'
+        }]
     }, {
         timestamps: true,
         versionKey: false

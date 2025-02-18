@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 
 import Teacher from '../teacher/teacher.model.js';
 import Student from '../student/student.model.js';
+import courseModel from '../course/course.model.js';
 
 export const validarStudentJWT = async (req, res, next) => {
 
@@ -70,6 +71,45 @@ export const validarTeacherJWT = async (req, res, next) => {
         }
         
         req.teacher = teacher;
+        
+        next();
+    
+    } catch (e) {
+        console.log(e);
+        res.status(400).json({
+            msg: "Token no válido"
+        });
+    }
+};
+
+export const validarCourseJWT = async (req, res, next) => {
+
+    const token = req.header("x-token");
+
+    if (!token) {
+        return res.status(400).json({
+            msg: "No hay token en la petición"
+        });
+    }
+
+    try {
+        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+
+        const course = await courseModel.findById(uid);
+
+        if (!course) {
+            return res.status(400).json({
+                msg: 'Curso no existe en la base de datos'
+            });
+        }
+
+        if (!course.estado) {
+            return res.status(400).json({
+                msg: 'Token no válido - cursos con estado: false'
+            });
+        }
+        
+        req.course = course;
         
         next();
     

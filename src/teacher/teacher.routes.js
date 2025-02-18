@@ -3,7 +3,7 @@ import { check } from "express-validator"
 import { existeTeacherById } from "../helpers/db-validator-.js"
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { validarTeacherJWT } from "../middlewares/validar-jwt.js";
-import { login, register, getTeachers, getTeacherById, updateTeacher,  deleteTeacher, activateTeacher } from "./teacher.controller.js";
+import { login, register, getTeachers, getTeacherById, updateTeacher,  deleteTeacher, activateTeacher, assignCourseTeacher, getTeacherCourses } from "./teacher.controller.js";
 import { registerTeacherValidator, loginValidator } from '../middlewares/validator.js';
 import { deleteFileOnError } from '../middlewares/delete-file-on-error.js';
 
@@ -71,5 +71,13 @@ import { deleteFileOnError } from '../middlewares/delete-file-on-error.js';
         ],
         activateTeacher
     )
+    
+    router.post(
+        '/assign', assignCourseTeacher
+    );
+
+    router.get(
+        '/list/:teacherId', getTeacherCourses
+    );
 
 export default router;

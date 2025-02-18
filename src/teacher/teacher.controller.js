@@ -2,6 +2,7 @@ import Teacher from './teacher.model.js'
 import { hash, verify } from 'argon2'
 import { generarJWT } from '../helpers/generate-jwt.js'
 import { response, request } from 'express'
+import courseModel from '../course/course.model.js'
 
     export const login = async (req, res) => {
 
@@ -228,5 +229,54 @@ import { response, request } from 'express'
                 message: 'Error al activar el profesor',
                 error
             })
+        }
+    }
+
+
+    export const assignCourseTeacher = async (req, res) => {
+        try {
+            let { teacherId, courseId } = req.body;
+
+            if (!Array.isArray(courseId)) {
+                return res.status(400).json({msg: 'courseId debe ser un array de ID'});
+            }
+
+            const teacher = await Teacher.findById(teacherId);
+            if (!teacher) {
+                return res.status(404).json({msg: 'Profesor no encontrado'});
+            }
+
+            const courses = await courseModel.find({_id: {$in: courseId}})
+            if (courses.length!== courseId.length) {
+                return res.status(400).json({msg: 'Uno o más cursos no existen'});
+            }
+
+            const totalCourses = new Set([...teacher.courses, ...courseId]);
+            if(totalCourses.size > 3) {
+                return res.status(400).json({msg: 'El profesor ya tiene el máximo de cursos permitidos'});
+            }
+
+            teacher.courses = [...totalCourses];
+            await teacher.save();
+
+            res.status(200).json({msg: 'Cursos asociados correctamente', teacher});
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({msg: 'Error al asignar el curso al Profesor'});
+        }
+    };
+
+
+    export const getTeacherCourses = async (req, res) => {
+        try {
+            const { teacherId } = req.params;
+            const teacher = await Teacher.findById(teacherId).populate("courses");
+            if (!teacher) {
+                return res.status(404).json({msg: 'Profesor no encontrado'});
+            }
+            res.status(200).json({courses: teacher.courses})
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({msg: 'Error al obtener los cursos del profesor'});
         }
     }

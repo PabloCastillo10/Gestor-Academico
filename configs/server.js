@@ -6,6 +6,7 @@ import morgan from 'morgan';
 import {dbConecction} from './mongo.js';
 import teacherRoutes from '../src/teacher/teacher.routes.js';
 import studentRoutes from '../src/student/student.routes.js';
+import courseRoutes from '../src/course/course.routes.js';
 const middlewares = (app) => {
     app.use(express.urlencoded({ extended: false }));
     app.use(cors());
@@ -18,6 +19,7 @@ const routes = (app) => {
     
     app.use("/gestorAcademico/v1/teachers", teacherRoutes);
     app.use("/gestorAcademico/v1/students", studentRoutes);
+    app.use("/gestorAcademico/v1/courses", courseRoutes);
 };
 
 const conectarDB = async () => {

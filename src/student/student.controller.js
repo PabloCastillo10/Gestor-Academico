@@ -2,6 +2,7 @@ import Student from './student.model.js'
 import { hash, verify } from 'argon2'
 import { generarJWT } from '../helpers/generate-jwt.js'
 import { response, request } from 'express'
+import courseModel from '../course/course.model.js'
 
         export const login = async (req, res) => {
 
@@ -230,3 +231,53 @@ import { response, request } from 'express'
                 })
             }
         }
+        export const assignCourse = async (req, res) => {
+            try {
+                let { studentId, courseId } = req.body;
+        
+                if (!Array.isArray(courseId)) {
+                    return res.status(400).json({ msg: 'courseId debe ser un array de IDs' });
+                }
+        
+                const student = await Student.findById(studentId);
+                if (!student) {
+                    return res.status(404).json({ msg: 'Estudiante no encontrado' });
+                }
+        
+                const courses = await courseModel.find({ _id: { $in: courseId } });
+                if (courses.length !== courseId.length) {
+                    return res.status(404).json({ msg: 'Uno o más cursos no existen' });
+                }
+        
+               
+                const totalCourses = new Set([...student.courses, ...courseId]);
+                if (totalCourses.size > 3) {
+                    return res.status(400).json({ msg: 'El estudiante no puede inscribirse en más de 3 cursos' });
+                }
+        
+               
+                student.courses = [...totalCourses];
+                await student.save();
+        
+                res.status(200).json({ msg: 'Estudiante asignado a los cursos', student });
+        
+            } catch (error) {
+                res.status(500).json({ msg: 'Error al asignar curso', error: error.message });
+            }
+        };
+        
+       
+        export const getStudentCourses = async (req, res) => {
+            try {
+                const { studentId } = req.params;
+                
+                const student = await Student.findById(studentId).populate("courses");
+                if (!student) {
+                    return res.status(404).json({ msg: "Estudiante no encontrado" });
+                }
+        
+                res.status(200).json({ courses: student.courses });
+            } catch (error) {
+                res.status(500).json({ msg: "Error al obtener los cursos", error });
+            }
+        };
